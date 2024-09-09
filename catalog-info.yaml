@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: fsw2n7e91-python-gitops
+  description: This is GitOps manifest for fsw2n7e91-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: fsw2n7e91-python
+    janus-idp.io/tekton: fsw2n7e91-python
+    backstage.io/kubernetes-id: fsw2n7e91-python 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:fsw2n7e91-python
